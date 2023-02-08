@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}Login - Spending Tracker{% endblock %}
+
+{% block include %}
+<!-- START: Backend models -->
+<script src="/static/backend-models/user.js"></script>
+<!-- END: Backend models -->
+
+<!-- START: Templates -->
+<script src="/static/templates/loading/class.js"></script>
+<script src="/static/templates/errors/class.js"></script>
+<script src="/static/templates/input/class.js"></script>
+<script src="/static/templates/button/class.js"></script>
+<script src="/static/routes/login/templates/user/class.js"></script>
+<!-- END: Templates -->
+
+<!-- START: Modals -->
+<script src="/static/routes/login/modals/new-user/class.js"></script>
+<script src="/static/modals/loading/class.js"></script>
+<!-- END: Modals -->
+
+<script src="/static/routes/base-local.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/routes/login/index.css" />
+<script src="/static/routes/login/index.js"></script>
+{% endblock %}
+
+{% block content %}
+<div></div>
+<div id="central-container">
+  <div class="center-content mt-5">
+    <add-new-item-btn></add-new-item-btn>
+  </div>
+  <hr class="separator" />
+  <errors></errors>
+  <div id="item-container"></div>
+</div>
+<div></div>
+{% endblock %}

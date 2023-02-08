@@ -1,0 +1,82 @@
+{{ID}} {
+  position: relative;
+  display: flex;
+}
+
+.title-container {
+  background-color: var(--input--title-bg, var(--missing-color-color));
+  margin-right: 0;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-right: 0;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.title-container > .required {
+  color: var(--text--required, var(--missing-color-color));
+  margin-left: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.color-display-container {
+  background-color: var(--input--field-bg, var(--missing-color-color));
+  color: var(--input--text, var(--missing-color-color));
+  padding: 5px;
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+  user-select: none;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.color-display-container.titleless {
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-radius: 5px;
+}
+
+.color-display-container > .color-display {
+  color: #FFF;
+  mix-blend-mode: difference;
+  font-family: monospace, monospace;
+}
+
+.popover {
+  position: absolute;
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-radius: 5px;
+  background-color: var(--input--field-bg, var(--missing-color-color));
+  z-index: 99;
+  padding: 5px;
+  top: 34px; /* TODO: Dynamic based on height(.title-container) */
+  width: 100%;
+}
+
+.popover > .slider-container {
+  display: flex;
+}
+
+.popover > .slider-container > .slider {
+  height: 32px;
+  margin-bottom: 5px;
+  position: relative;
+  flex-grow: 1;
+}
+
+.popover > .slider-container > .slider > .slider-selector {
+  position: absolute;
+  display: inline-block;
+  height: calc(100% - 2px);
+  width: 1px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  mix-blend-mode: difference;
+}
+
+.popover > .slider-container > .slider-value {
+  margin-left: 5px;
+}

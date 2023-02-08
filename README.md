@@ -1,1 +1,3 @@
-# spending-tracker
+# Spending Tracker
+
+A way to track spending

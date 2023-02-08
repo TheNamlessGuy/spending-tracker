@@ -1,0 +1,58 @@
+{{ID}} {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+{{ID}} > * {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.input-title-container {
+  background-color: var(--input--title-bg, var(--missing-color-color));
+  margin-right: 0;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-right: 0;
+  user-select: none;
+  white-space: nowrap;
+}
+
+{{ID}}.has-error .input,
+{{ID}}.has-error .input.titleless,
+{{ID}}.has-error .input-title-container {
+  border-color: var(--error-color, var(--missing-color-color));
+}
+
+.input {
+  background-color: var(--input--field-bg, var(--missing-color-color));
+  color: var(--input--text, var(--missing-color-color));
+  padding: 5px;
+  border-radius: 0 5px 5px 0;
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-left: 0;
+  flex-grow: 1;
+  outline: none;
+}
+
+.input.titleless {
+  border: 2px solid var(--input--border, var(--missing-color-color));
+  border-radius: 5px;
+}
+
+.required {
+  color: var(--text--required, var(--missing-color-color));
+  margin-left: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.error {
+  font-size: 12px;
+  padding-top: 2px;
+  padding-left: 5px;
+  color: var(--error-color, var(--missing-color-color));
+}

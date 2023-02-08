@@ -1,0 +1,29 @@
+#budgets-container {
+  width: fit-content;
+}
+
+#budgets-container > .budget {
+  background-color: var(--bg--light, var(--missing-color-color));
+  border: 2px solid var(--bg-border, var(--missing-color-color));
+  margin: 10px 0 0 10px;
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--text, var(--missing-color-color));
+  font-size: 12px;
+}
+
+#budgets-container > .budget .name {
+  text-decoration: underline;
+}
+
+#budgets-container > .budget .amount {
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: var(--text-outline);
+}
+#budgets-container > .budget .amount.positive {
+  color: var(--amount-positive, var(--missing-color-color));
+}
+#budgets-container > .budget .amount.negative {
+  color: var(--amount-negative, var(--missing-color-color));
+}

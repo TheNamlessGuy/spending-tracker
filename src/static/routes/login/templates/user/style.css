@@ -1,0 +1,15 @@
+{{ID}} {
+  border: 2px solid var(--bg-border, var(--missing-color-color));
+  border-radius: 5px;
+  color: var(--text, var(--missing-color-color));
+  background-color: var(--data-color, var(--missing-color-color));
+  padding: 5px;
+  width: fit-content;
+  height: fit-content;
+  user-select: none;
+  cursor: pointer;
+}
+
+.login-user {
+  font-size: 40px;
+}

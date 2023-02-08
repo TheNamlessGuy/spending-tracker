@@ -1,0 +1,6 @@
+{{ID}}.errors > .error {
+  background-color: var(--error-color, var(--missing-color-color));
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--text, var(--missing-color-color));
+}

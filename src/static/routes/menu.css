@@ -1,0 +1,46 @@
+#menu-container {
+  margin-right: 5px;
+}
+
+#menu {
+  float: right;
+  height: fit-content;
+  width: fit-content;
+  background-color: var(--bg--light, var(--missing-color-color));
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 2px solid var(--bg-border, var(--missing-color-color));
+  border-radius: 5px;
+  color: var(--text, var(--missing-color-color));
+}
+
+#menu .menu-item {
+  margin-top: 5px;
+}
+#menu .menu-item.first {
+  margin-top: 0;
+}
+
+#menu span.menu-item {
+  text-decoration: underline;
+  cursor: default;
+}
+
+#menu a.menu-item {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--text--faded, var(--missing-color-color));
+}
+
+#menu a.menu-item:hover {
+  color: var(--text, var(--missing-color-color));
+}
+
+#menu .separator {
+  width: 100%;
+}
+
+#menu-logout-btn-container {
+  text-align: center;
+}

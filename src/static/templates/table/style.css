@@ -1,0 +1,45 @@
+{{ID}} {
+  display: grid;
+}
+
+.table-cell.tl {
+  border-top-left-radius: 5px;
+}
+.table-cell.bl {
+  border-bottom-left-radius: 5px;
+}
+.table-cell.tr {
+  border-top-right-radius: 5px;
+}
+.table-cell.br {
+  border-bottom-right-radius: 5px;
+}
+
+.table-cell {
+  padding: 5px;
+  color: var(--text, var(--missing-color-color));
+  border-right: 2px solid var(--table--border, var(--missing-color-color));
+
+  display: inline;
+  vertical-align: middle;
+}
+.table-cell.rightmost {
+  border-right: 0;
+}
+
+.table-button-cell {
+  display: flex;
+  justify-content: end;
+}
+
+.table-header-cell {
+  background-color: var(--table--row-header, var(--missing-color-color));
+}
+
+.table-row-even {
+  background-color: var(--table--row-even, var(--missing-color-color));
+}
+
+.table-row-odd {
+  background-color: var(--table--row-odd, var(--missing-color-color));
+}
