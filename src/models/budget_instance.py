@@ -37,8 +37,8 @@ class Class(BaseModelClass):
     Validate.validate(kwargs, cls.columns, {
       'id':             [Validate.NotExists()],
       'budget_id':      [Validate.Exists(), Validate.Relation(Budget.Class)],
-      'amount_limit':   [Validate.Type(float, nullable = True), Validate.GreaterThan('amount', or_equal = True)],
-      'amount':         [Validate.Exists(), Validate.Type(float), Validate.GreaterThan(0, or_equal = True)],
+      'amount_limit':   [Validate.Type(float, nullable = True)],
+      'amount':         [Validate.Exists(), Validate.Type(float)],
       'deactivated_at': [Validate.Exists(), Validate.IsIsoDateString(nullable = True)],
     })
 
@@ -54,10 +54,22 @@ class Class(BaseModelClass):
       print('UNKNOWN ITEM TYPE TYPE', spending_item.item_type().type)
 
     if type == 'RESET':
-      amount = convert.to_float(self.budget().active_starting_amount)
-      if amount is None:
-        amount = paid
-    elif type == 'ADD':
+      # Create a new active instance
+      starting_amount = convert.to_float(self.budget().active_starting_amount)
+      if starting_amount is None:
+        starting_amount = paid
+      new_instance = Class.create(
+        budget_id = self.budget_id,
+        amount_limit = self.budget().active_amount_limit,
+        amount = starting_amount,
+        deactivated_at = None,
+      )
+
+      # Deactivate current instance
+      self.update(deactivated_at = spending_item.spending_container().date)
+      return
+
+    if type == 'ADD':
       amount -= paid
     elif type == 'SUB':
       amount += paid
